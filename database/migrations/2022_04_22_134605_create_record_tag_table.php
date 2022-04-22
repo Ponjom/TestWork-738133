@@ -12,7 +12,7 @@ class CreateRecordTagTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('record_id');
             $table->unsignedBigInteger('tag_id');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
 
             $table->foreign('record_id')->references('id')->on('records');
